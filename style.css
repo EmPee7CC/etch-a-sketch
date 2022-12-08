@@ -73,23 +73,23 @@ input:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   width: 200px;
 }
 
-/* input::before {
+input::before {
   content: 'Color Picker';
   display: block;
   width: 200px;
   margin: 10px 0;
-} */
+}
 
 input {
   width: 75px;
   height: 75px;
   background: none;
   border: none;
-  /* margin-bottom: 40px; */
+  margin-bottom: 40px;
 }
 
 input[type='color']::-webkit-color-swatch-wrapper {
@@ -106,4 +106,8 @@ input[type='color']::-webkit-color-swatch {
   width: 500px;
   height: 500px;
   box-shadow: 5px 5px 15px 0px rgba(50, 50, 50, 0.25);
+}
+
+.grid-element {
+  user-select: none;
 }
