@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* UTIL CLASSES */
+
+input {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+input:hover {
+  transform: scale(1.1);
+}
+
+.btn {
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.active {
+  background-color: rgba(0, 90, 255, 0.75);
+}
+
+/* HEADER */
+
+.header {
+  background-color: #333;
+  padding: 40px 0;
+}
+
+.header-title {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+/* MAIN */
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-top: 100px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 200px;
+}
+
+/* input::before {
+  content: 'Color Picker';
+  display: block;
+  width: 200px;
+  margin: 10px 0;
+} */
+
+input {
+  width: 75px;
+  height: 75px;
+  background: none;
+  border: none;
+  /* margin-bottom: 40px; */
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  box-shadow: 5px 5px 15px 0px rgba(50, 50, 50, 0.25);
+}

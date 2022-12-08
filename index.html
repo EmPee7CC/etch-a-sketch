@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/etch-a-sketch/style.css" />
+    <title>Etch-A-Sketch</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-title">Etch-A-Sketch</h1>
+    </header>
+    <main class="main">
+      <div class="settings">
+        <input id="colorPicker" type="color" value="#333333" />
+        <button class="btn" id="colorBtn">Color Mode</button>
+        <button class="btn" id="rainbowBtn">Rainbow Mode</button>
+        <button class="btn" id="eraserBtn">Eraser</button>
+        <button class="btn" id="clearBtn">Clear</button>
+      </div>
+      <div id="grid" class="grid"></div>
+    </main>
+    <script src="/etch-a-sketch/script.js"></script>
+  </body>
+</html>
