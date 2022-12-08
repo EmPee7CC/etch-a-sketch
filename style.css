@@ -111,3 +111,40 @@ input[type='color']::-webkit-color-swatch {
 .grid-element {
   user-select: none;
 }
+
+@media (max-width: 850px) {
+  .main {
+    gap: 50px;
+    margin-top: 50px;
+  }
+
+  .settings {
+    gap: 15px;
+    width: 150px;
+  }
+
+  .grid {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-title {
+    font-size: 2.5rem;
+  }
+
+  .main {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+  }
+
+  .settings {
+    margin: -30px 0 30px 0;
+  }
+
+  .grid {
+    width: 300px;
+    height: 300px;
+  }
+}
