@@ -12,12 +12,18 @@ const rainbowBtn = document.querySelector('#rainbowBtn');
 const eraserBtn = document.querySelector('#eraserBtn');
 const clearBtn = document.querySelector('#clearBtn');
 const grid = document.querySelector('#grid');
+const sizePara = document.querySelector('.paraSize');
+const sizePicker = document.querySelector('#sizePicker');
 
 colorPicker.addEventListener('input', (e) => setCurrentColor(e.target.value));
 colorBtn.addEventListener('click', () => setCurrentMode('color'));
 rainbowBtn.addEventListener('click', () => setCurrentMode('rainbow'));
 eraserBtn.addEventListener('click', () => setCurrentMode('eraser'));
 clearBtn.addEventListener('click', () => reloadGrid());
+sizePicker.addEventListener('change', (e) => {
+  setCurrentSize(e.target.value);
+  reloadGrid();
+});
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -30,6 +36,11 @@ function setCurrentMode(newMode) {
 
 function setCurrentColor(newColor) {
   currentColor = newColor;
+}
+
+function setCurrentSize(newSize) {
+  currentSize = newSize;
+  sizePara.textContent = `${newSize} x ${newSize}`;
 }
 
 function activateButton(newMode) {
@@ -54,7 +65,7 @@ function createGrid(size) {
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-  for (let i = 0; i <= size ** 2; i++) {
+  for (let i = 0; i < size ** 2; i++) {
     const gridElement = document.createElement('div');
     gridElement.classList.add('grid-element');
     gridElement.addEventListener('mouseover', changeColor);
@@ -69,24 +80,28 @@ function clearGrid() {
 
 function reloadGrid() {
   clearGrid();
-  createGrid(DEFAULT_SIZE);
+  createGrid(currentSize);
 }
 
 function changeColor(e) {
   if (e.type === 'mouseover' && !mouseDown) return;
   if (currentMode === 'color') {
     e.target.style.backgroundColor = currentColor;
+    e.target.style.borderColor = currentColor;
   } else if (currentMode === 'eraser') {
     e.target.style.backgroundColor = '#fff';
+    e.target.style.borderColor = 'rgb(245, 245, 245)';
   } else if (currentMode === 'rainbow') {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
     e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    e.target.style.borderColor = `rgb(${r}, ${g}, ${b})`;
   }
 }
 
 window.onload = () => {
-  createGrid(DEFAULT_SIZE);
+  sizePara.textContent = `${currentSize} x ${currentSize}`;
+  createGrid(currentSize);
   activateButton(DEFAULT_MODE);
 };
