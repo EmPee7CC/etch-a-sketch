@@ -24,6 +24,9 @@ sizePicker.addEventListener('change', (e) => {
   setCurrentSize(e.target.value);
   reloadGrid();
 });
+sizePicker.addEventListener('mousemove', (e) => {
+  sizePara.textContent = `${e.target.value} x ${e.target.value}`;
+});
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -40,7 +43,6 @@ function setCurrentColor(newColor) {
 
 function setCurrentSize(newSize) {
   currentSize = newSize;
-  sizePara.textContent = `${newSize} x ${newSize}`;
 }
 
 function activateButton(newMode) {

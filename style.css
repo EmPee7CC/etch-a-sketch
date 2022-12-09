@@ -136,6 +136,16 @@ label[for='sizePicker'] {
     width: 150px;
   }
 
+  label[for='sizePicker'] {
+    margin-top: -10px;
+    font-size: 0.85rem;
+  }
+
+  .paraSize {
+    margin-bottom: -10px;
+    font-size: 0.85rem;
+  }
+
   .grid {
     height: 400px;
     width: 400px;
@@ -157,7 +167,7 @@ label[for='sizePicker'] {
   }
 
   .grid {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
 }
