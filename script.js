@@ -43,6 +43,7 @@ function setCurrentColor(newColor) {
 
 function setCurrentSize(newSize) {
   currentSize = newSize;
+  sizePara.textContent = `${newSize} x ${newSize}`;
 }
 
 function activateButton(newMode) {
