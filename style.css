@@ -105,6 +105,10 @@ input[type='range'] {
   width: 100%;
 }
 
+label[for='sizePicker'] {
+  margin-top: -20px;
+}
+
 .paraSize {
   margin-bottom: -20px;
 }
